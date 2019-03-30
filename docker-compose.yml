@@ -1,0 +1,15 @@
+version: "2"
+services:
+  db:
+    container_name: db-chitfund
+    image: mysql:5.7
+    volumes:
+      - ./resources/sql:/docker-entrypoint-initdb.d/
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=nand
+      - MYSQL_ROOT_PASSWORD=nandi678
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=nandi678
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
